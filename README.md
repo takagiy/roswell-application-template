@@ -14,6 +14,8 @@ $ ros template import roswell-application-template
 
 # Usage
 
+create new application skeleton by `ros init app your_app_name`
+
 ```
 $ ros init app myapp
 $ tree myapp/
