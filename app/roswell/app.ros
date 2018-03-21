@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#| vim:set ft=lisp:
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  (unless (find-package :{{name}})
+    (ql:quickload :{{name}} :silent t)))
+
+(defpackage :ros.script.{{name}}.{{universal_time}}
+  (:use :cl))
+(in-package :ros.script.{{name}}.{{universal_time}})
+
+(defun main (&rest argv)
+  ({{name}}:main argv))
+
